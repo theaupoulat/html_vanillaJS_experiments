@@ -1,0 +1,24 @@
+.money {
+  /* border: solid black; */
+  width: 120px;
+  height: 120px;
+  display: grid;
+  justify-items: center;
+  font-size: 100px;
+  z-index: 5;
+  position: relative;
+}
+
+#score {
+  font-size: 100px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 900;
+  text-align: center;
+
+  opacity: 0.5;
+  /* z-index: 0; */
+  position: absolute;
+  padding-top: 200px;
+  width: 100%;
+}

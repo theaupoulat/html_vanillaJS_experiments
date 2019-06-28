@@ -1,0 +1,201 @@
+/* column 1: votes */
+.item1 {
+  grid-area: scoreUp;
+  align-self: center;
+  justify-self: center;
+  padding-top: 40px;
+}
+.item2 {
+  grid-area: score;
+  align-self: center;
+  justify-self: center;
+}
+.item3 {
+  grid-area: scoreDown;
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 40px;
+}
+
+/* column 2: title */
+.item4 {
+  grid-area: trgb(120, 130, 160);
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: middle;
+  padding-left: 20px;
+}
+
+.titleBox {
+  margin: 10px;
+}
+
+.titleBox h1 {
+  font-size: 40;
+  margin: 1px;
+}
+
+.titleBox h1:hover {
+  font-size: 45;
+  margin-bottom: -7px;
+  color: pink;
+  animation: mymove 0.5s 1 /* number of times on 3rd arg*/;
+}
+
+@keyframes mymove {
+  0% {
+    color: red;
+  }
+  50% {
+    color: orange;
+  }
+  100% {
+    color: pink;
+  }
+}
+
+.titleBox p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: oblique;
+}
+
+.item5 {
+  grid-area: subtitle;
+  font-size: 14px;
+}
+
+/* column 3: location */
+
+.item6 {
+  grid-area: earthEmoji;
+  font-size: 32px;
+  align-self: start;
+  padding: 5px;
+}
+
+.item7 {
+  grid-area: cityName;
+  align-self: end;
+}
+
+.item8 {
+  grid-area: countryName;
+  align-self: start;
+}
+
+/* column 3: scores */
+.item9 {
+  grid-area: easeScore;
+  align-self: center;
+  justify-self: center;
+  padding-top: 10px;
+}
+
+.item10 {
+  grid-area: childrenFriendlyness;
+  align-self: center;
+  justify-self: center;
+  padding: 5px;
+}
+
+.item11 {
+  grid-area: steepness;
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 10px;
+}
+
+/* specific styles*/
+
+.contentCard {
+  text-align: center;
+  align-self: center;
+}
+
+#roundedCorner {
+  border-radius: 25px;
+  width: 120px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#bold {
+  font-weight: bold;
+}
+
+.isGood {
+  background: green;
+}
+
+.isMedium {
+  background: yellow;
+}
+
+.isBad {
+  background: red;
+}
+
+/* vote buttons*/
+.arrow {
+  border: solid black;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* animate vote buttons */
+.up:hover {
+  border: solid green;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+.down:hover {
+  border: solid red;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+/* main div style*/
+
+.container {
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  min-height: 110px;
+  width: 900px;
+  height: 110px;
+  display: grid;
+  grid-template-columns: 1fr 6fr 2fr 2fr;
+  grid-template-rows: repeat(3, 30px);
+  grid-gap: 10px;
+  grid-template-areas:
+    "scoreUp title earthEmoji easeScore"
+    "score title cityName childrenFriendlyness"
+    "scoreDown title countryName steepness";
+  /* border-style: solid;
+  border-color: black;*/
+  border-radius: 25px;
+  box-shadow: 5px 10px 10px 2px #dddddd;
+  margin-top: 50px;
+}
+
+.div {
+  background-color: black;
+}
+
+/* Make it rain test */

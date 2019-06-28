@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <script src="../anime.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item1">
+        <div class="contentCard"><i class="arrow up"></i></div>
+      </div>
+      <div class="item2">
+        <div class="contentCard" id="bold">42</div>
+      </div>
+      <div class="item3">
+        <div class="contentCard"><i class="arrow down"></i></div>
+      </div>
+      <div class="item4">
+        <div class="titleBox">
+          <h1>The Paris of Artists</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            pulvinar consequat lacus ac faucibus.Lorem ipsum dolor sit amet,
+            consectetur.
+          </p>
+        </div>
+      </div>
+
+      <div class="item6">
+        <div class="contentCard">🌍</div>
+      </div>
+      <div class="item7">
+        <div class="contentCard" id="bold">Paris</div>
+      </div>
+      <div class="item8">
+        <div class="contentCard">France</div>
+      </div>
+      <div class="item9">
+        <div class="contentCard isGood" id="roundedCorner">🤙</div>
+      </div>
+      <div class="item10">
+        <div class="contentCard isMedium" id="roundedCorner">👶</div>
+      </div>
+      <div class="item11">
+        <div class="contentCard isBad" id="roundedCorner">⛰</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item1">
+        <div class="contentCard">
+          <i class="arrow up" onclick="keepColor()"></i>
+        </div>
+      </div>
+      <div class="item2">
+        <div class="contentCard" id="bold">42</div>
+      </div>
+      <div class="item3">
+        <div class="contentCard"><i class="arrow down"></i></div>
+      </div>
+      <div class="item4">
+        <div class="titleBox">
+          <h1>The Artists of Paris</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            pulvinar consequat lacus ac faucibus.Lorem ipsum dolor sit amet,
+            consectetur.
+          </p>
+        </div>
+      </div>
+
+      <div class="item6">
+        <div class="contentCard">🌍</div>
+      </div>
+      <div class="item7">
+        <div class="contentCard" id="bold">Paris</div>
+      </div>
+      <div class="item8">
+        <div class="contentCard">France</div>
+      </div>
+      <div class="item9">
+        <div class="contentCard isGood" id="roundedCorner">🤙</div>
+      </div>
+      <div class="item10">
+        <div class="contentCard isMedium" id="roundedCorner">👶</div>
+      </div>
+      <div class="item11">
+        <div class="contentCard isBad" id="roundedCorner">⛰</div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="money" onclick="random()">💸</div>
+
+    <script>
+      anime({
+        targets: ".container",
+        translateX: [-100, 20],
+        //rotate: "1turn",
+        backgroundColor: "#FFF",
+        duration: 500,
+        delay: anime.stagger(50),
+        easing: "linear"
+      });
+
+      let score = 0;
+      const scoreAdd = () => {
+        score += 1;
+        console.log(`Score : ${score}`);
+      };
+
+      const random = () => {
+        let randomValueX = Math.floor(Math.random() * 1400);
+        newPointX = randomValueX;
+        console.log(`X Postion : ${newPointX}`);
+
+        let randomValueY = Math.floor(Math.random() * 660) - 330;
+        newPointY = randomValueY;
+        console.log(`Y Position : ${newPointY}`);
+
+        scoreAdd();
+
+        anime({
+          targets: ".money",
+          translateX: newPointX,
+          translateY: newPointY,
+          easing: "linear",
+          duration: 1
+        });
+      };
+
+      const keepColor = () => {
+        anime({
+          targets: ".up",
+          border: `solid #FFF`
+        });
+      };
+
+      /*
+        let tl = anime.timeline({
+          duration: 4000,
+          easing: "linear"
+        });
+
+        tl.add({
+          targets: ".money",
+          translateX: 500,
+          duration: 2000
+        });
+
+        tl.add({
+          targets: ".money",
+          translateY: 500,
+          duration: 2000
+        });
+      const makeItRain = () => {
+        while (true) {
+          let xPosition = 500;
+
+          anime({
+            targets: ".money",
+            translateY: [0, 700]
+          });
+        }
+      }; */
+    </script>
+  </body>
+</html>

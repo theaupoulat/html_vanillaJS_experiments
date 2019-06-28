@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <script src="../anime.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div onclick="getBad()">
+      <p id="score">Click the 🦄 to play</p>
+      <div class="money" onclick="random()">🦄</div>
+    </div>
+    <script>
+      // score handling
+      let score = 0;
+      const scoreAdd = () => {
+        score += 1;
+        document.getElementById("score").innerHTML = `score : ${score} `;
+        console.log(`Score : ${score}`);
+      };
+
+      // set & go to new position
+      const setNewPosition = () => {
+        let randomValueX = Math.floor(Math.random() * 1460);
+        newPointX = randomValueX;
+        console.log(`X Postion : ${newPointX}`);
+
+        let randomValueY = Math.floor(Math.random() * 650);
+        newPointY = randomValueY;
+        console.log(`Y Position : ${newPointY}`);
+
+        anime({
+          targets: ".money",
+          translateX: newPointX,
+          translateY: newPointY,
+          easing: "linear",
+          duration: 1
+        });
+      };
+
+      // action on click
+      const random = () => {
+        setNewPosition();
+        timerMilli = 0;
+        scoreAdd();
+      };
+
+      // timer
+      let timerMilli = 0;
+
+      const addHundredMilli = () => {
+        timerMilli += 100;
+        if (timerMilli % 3000 === 0) {
+          setNewPosition();
+        }
+        console.log(timerMilli);
+      };
+
+      setInterval(addHundredMilli, 100);
+
+      Réduir;
+    </script>
+  </body>
+</html>
